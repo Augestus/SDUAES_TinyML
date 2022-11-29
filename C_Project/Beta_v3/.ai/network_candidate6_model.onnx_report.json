@@ -1,0 +1,337 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --name network -m D:/Desktop/candidate6_model.onnx --type onnx --compression medium --verbosity 1 --workspace C:\\Users\\augus\\AppData\\Local\\Temp\\mxAI_workspace29061219700710013089624907482361542 --output C:\\Users\\augus\\.stm32cubemx\\network_output --allocate-inputs --allocate-outputs",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 6
+    },
+    "cli_version_str": "1.6.0",
+    "compression": {
+        "factor": 5.4860335195530725,
+        "layers": {
+            "node_24_weights": 7.982608695652174
+        }
+    },
+    "date_time": "Sun Oct  9 17:47:39 2022",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "b6cce9768e194d3b8d41b12e6f4bae3d",
+    "inputs": [
+        "input_1"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                4
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1836,
+                "psize": 7344,
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [],
+            "name": "fc1_2_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 2,
+                "psize": 8,
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [],
+            "name": "fc1_2_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 5000,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1250,
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "input_1",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 27813,
+                "n_params": 48,
+                "psize": 192,
+                "rom_output": {
+                    "c_size": 7416,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        618,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "input_1"
+            ],
+            "name": "node_17",
+            "original": "Conv",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                0
+            ],
+            "extras": {
+                "n_macc": 1854,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 192
+            },
+            "id": 2,
+            "inputs": [
+                "node_17"
+            ],
+            "name": "node_18",
+            "original": "Relu",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                1
+            ],
+            "extras": {
+                "n_macc": 3708,
+                "n_params": 6,
+                "psize": 24,
+                "rom_output": {
+                    "c_size": 7416,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        618,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 24
+            },
+            "id": 3,
+            "inputs": [
+                "node_18"
+            ],
+            "name": "node_19",
+            "original": "BatchNormalization",
+            "type": "ScaleBias"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 19281,
+                "n_params": 66,
+                "psize": 264,
+                "rom_output": {
+                    "c_size": 3672,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        306,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 4,
+            "inputs": [
+                "node_19"
+            ],
+            "name": "node_20",
+            "original": "Conv",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [
+                2
+            ],
+            "extras": {
+                "n_macc": 918,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 264
+            },
+            "id": 5,
+            "inputs": [
+                "node_20"
+            ],
+            "name": "node_21",
+            "original": "Relu",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                3
+            ],
+            "extras": {
+                "n_macc": 1836,
+                "n_params": 6,
+                "psize": 24,
+                "rom_output": {
+                    "c_size": 3672,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        306,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 24
+            },
+            "id": 6,
+            "inputs": [
+                "node_21"
+            ],
+            "name": "node_22",
+            "original": "BatchNormalization",
+            "type": "ScaleBias"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [
+                "node_22"
+            ],
+            "name": "node_23",
+            "original": "Flatten",
+            "type": "Reshape"
+        },
+        {
+            "c_id": [
+                5
+            ],
+            "extras": {
+                "n_macc": 1838,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        2,
+                        1
+                    ]
+                },
+                "rom_size": 992
+            },
+            "id": 8,
+            "inputs": [
+                "node_23",
+                "fc1_2_weight",
+                "fc1_2_bias"
+            ],
+            "name": "node_24",
+            "original": "Gemm",
+            "type": "Gemm"
+        }
+    ],
+    "model_files": [
+        "D:\\Desktop\\candidate6_model.onnx"
+    ],
+    "model_n_params": 1964,
+    "model_name": "candidate6_model",
+    "model_size": 7856,
+    "model_type": "onnx",
+    "name": "network",
+    "outputs": [
+        "node_24"
+    ],
+    "ram_io_size": [
+        5000,
+        8
+    ],
+    "ram_size": [
+        7504,
+        7504
+    ],
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 5000,
+            "c_type": "float",
+            "name": "input_1"
+        }
+    ],
+    "rom_n_macc": 57248,
+    "rom_outputs": [
+        {
+            "c_size": 8,
+            "c_type": "float",
+            "name": "node_24"
+        }
+    ],
+    "rom_size": 1496,
+    "strategy": "heap_overlay",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 6
+    },
+    "tools_version": {
+        "extra": "RC5",
+        "major": 7,
+        "micro": 0,
+        "minor": 2
+    },
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}
